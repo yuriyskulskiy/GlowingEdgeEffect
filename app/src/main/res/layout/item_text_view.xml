@@ -12,6 +12,6 @@
     android:textAlignment="center"
     android:textAllCaps="true"
     android:textColor="@android:color/holo_red_dark"
-    android:textSize="30sp"
-   android:background="@android:color/black"
+    android:background="@android:color/black"
+    android:textSize="24sp"
     android:textStyle="bold" />
