@@ -1,6 +1,5 @@
 package com.article.glowingedgeeffect;
 
-import android.graphics.BlurMaskFilter;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -13,7 +12,6 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
 
     private final static int MOCK_ADAPTER_SIZE = 1;
 
-    // Create new views (invoked by the layout manager)
     @Override
     public RVAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                    int viewType) {
@@ -35,22 +33,17 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
 
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        // each data item is just a string in this case
         public TextView textView;
 
         public ViewHolder(TextView v) {
             super(v);
-            applyBlurMaskFilter(v, BlurMaskFilter.Blur.NORMAL);
+            applyGlowing(v);
             textView = v;
         }
     }
 
-    private static void applyBlurMaskFilter(TextView tv, BlurMaskFilter.Blur style) {
-//        tv.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+    private static void applyGlowing(TextView tv) {
         float radius = tv.getTextSize() * 0.5f;
-//        float radius = 5;
-        BlurMaskFilter filter = new BlurMaskFilter(radius, style);
         tv.setShadowLayer(radius, 0, 0, Color.RED);
-//        tv.getPaint().setMaskFilter(filter);
     }
 }
