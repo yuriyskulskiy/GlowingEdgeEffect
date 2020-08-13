@@ -1,1 +1,2 @@
 # GlowingEdgeEffect
+![](main.gif)
