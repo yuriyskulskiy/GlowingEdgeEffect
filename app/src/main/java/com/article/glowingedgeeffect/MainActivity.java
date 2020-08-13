@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.article.glowingedgeeffect.custom.GlowingEdgeEffect;
 import com.article.glowingedgeeffect.custom.GlowingEdgeEffectFactory;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,12 +25,6 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new RVAdapter();
         recyclerView.setAdapter(mAdapter);
 
-        GlowingEdgeEffectFactory factory = new GlowingEdgeEffectFactory(getApplicationContext());
-        updateEdgeEffect(factory.edgeEffect);
-        recyclerView.setEdgeEffectFactory(factory);
-    }
-
-    private void updateEdgeEffect(GlowingEdgeEffect edgeEffect) {
-        // TODO
+        recyclerView.setEdgeEffectFactory(new GlowingEdgeEffectFactory());
     }
 }
